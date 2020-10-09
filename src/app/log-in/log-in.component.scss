@@ -1,0 +1,40 @@
+.container{
+    width: 100vw;
+    padding: 5px;
+    /* margin-bottom: 5px; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d3d8de;
+}
+
+// .top-head{
+//     background-color:blueviolet;
+// }
+
+.btn{
+    border-radius: 0;
+}
+
+a{
+    background: #d6d6d6;
+}
+
+.input-group{
+    margin-bottom: 10px;
+}
+
+.form-wrap{
+    width: calc(100% - 40px);
+    padding: 20px;
+    border: 1px solid #d6d6d6;
+    border-radius: 10px;
+    max-width: 500px;
+    background: whitesmoke;
+
+}
+
+body{
+    background-color: #f8eff7;
+}

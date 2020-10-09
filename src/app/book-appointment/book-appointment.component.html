@@ -1,0 +1,39 @@
+<div class="container text-center">
+    <form [formGroup]="book_appointment_form" (ngSubmit)="book_appointment(book_appointment_form)" class="form-wrap">
+        <h3>Book Appointment!</h3>
+        <div class="form-group">
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-calendar"></i></span>
+                <input class="form-control input-lg" id="date" formControlName="appointment_date" bsDatepicker
+                    [bsConfig]="{ showWeekNumbers: false }" type="text" placeholder="pick a date">
+                <small class="text-danger"
+                    *ngIf="book_appointment_form.controls.appointment_date.touched &&!book_appointment_form.controls.appointment_date.valid">This
+                    field is required!</small>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                <input class="form-control input-lg" formControlName="contact_name" id="name" type="text"
+                    placeholder="Name">
+                <small class="text-danger"
+                    *ngIf="book_appointment_form.controls.contact_name.touched &&!book_appointment_form.controls.contact_name.valid">This
+                    field is required!</small>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon"><i class="glyphicon glyphicon-phone"></i></span>
+                <input class="form-control input-lg" id="name" type="text" formControlName="contact_number"
+                    placeholder="contact">
+                <small class="text-danger"
+                    *ngIf="book_appointment_form.controls.contact_number.touched && !book_appointment_form.controls.contact_number.pattern  && !book_appointment_form.controls.contact_number.valid">This
+                    field is required!</small>
+            </div>
+            <button class="btn" type="button" routerLink="" class="btn btn-warning">Log out!</button>
+            &nbsp;
+            &nbsp;
+            <button class="btn" type="button" routerLink="/view" class="btn btn-info">View!</button>
+            &nbsp;
+            &nbsp;
+            <button class="btn" type="submit" [disabled]="book_appointment_form.invalid"
+                class="btn btn-success">Submit!</button>
+        </div>
+    </form>
+</div>

@@ -1,0 +1,32 @@
+input{
+    outline: none;
+}
+
+.container{
+    width: 100vw;
+    padding: 5px;
+    /* margin-bottom: 5px; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d3d8de;
+}
+
+.form-wrap{
+    width: calc(100% - 40px);
+    padding: 20px;
+    border: 1px solid #d6d6d6;
+    border-radius: 10px;
+    max-width: 500px;
+    background: whitesmoke;
+
+}
+
+.input-group{
+    margin-bottom: 10px;
+}
+
+.btn{
+    border-radius: 0;
+}

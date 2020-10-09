@@ -1,0 +1,26 @@
+.thead{
+
+    background-color: rgb(165, 165, 192);
+}
+
+.container{
+    width: 100vw;
+    padding: 5px;
+    /* margin-bottom: 5px; */
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: #d3d8de;
+}
+
+.form-wrap{
+    width: 100%;
+    padding: 20px;
+    border: 1px solid #d6d6d6;
+    border-radius: 10px;
+    max-width: 500px;
+    background: whitesmoke;
+    height: 367px;
+
+}

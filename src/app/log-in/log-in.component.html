@@ -1,0 +1,74 @@
+<div class="container text-center">
+    <div class="form-wrap">
+        <h3 class="top-head">Book Appointment!</h3>
+        <ul class="nav nav-tabs nav-justified">
+            <li><a data-toggle="tab" href="#signUp">Sign-up</a></li>
+            <li class="active"><a data-toggle="tab" href="#logIn">Log-in</a></li>
+        </ul>
+
+        <div class="tab-content">
+            <!--  Sign up -->
+            <div id="signUp" class="tab-pane fade">
+                <h3>Sign up!</h3>
+                <form [formGroup]="sign_up_form" (ngSubmit)="on_signup_submit(sign_up_form)">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-user"></i></span>
+                        <input class="form-control input-lg validation-field" name="first_last_name"
+                            formControlName="first_last_name" id="email" type="text" placeholder="First & Last name">
+                        <small class="text-danger"
+                            *ngIf="sign_up_form.controls.first_last_name.touched &&!sign_up_form.controls.first_last_name.valid">This
+                            field is required!</small>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input class="form-control input-lg validation-field" id="email" name="user_email"
+                            formControlName="user_email" type="text" placeholder="Ex.pat@gmail.com">
+                        <small class="text-danger"
+                            *ngIf="sign_up_form.controls.user_email.touched && !sign_up_form.controls.user_email.valid">This
+                            field is required!</small>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input class="form-control input-lg" id="password" type="password" name="user_password"
+                            formControlName="user_password" placeholder="Select password">
+                        <small class="text-danger"
+                            *ngIf="sign_up_form.controls.user_password.touched &&!sign_up_form.controls.user_password.valid">This
+                            field is required!</small>
+                    </div>
+                    <button class="btn" type="submit" [disabled]="sign_up_form.invalid" class="btn btn-success">Create
+                        an Account!</button>
+                </form>
+            </div>
+
+            <!-- log in -->
+            <div id="logIn" class="tab-pane fade in active">
+                <h3>Log in!</h3>
+                <form [formGroup]="log_in_form">
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-envelope"></i></span>
+                        <input class="form-control input-lg validation-field " id="email" type="text" name="user_email"
+                            formControlName="user_email" placeholder="Ex.pat@gmail.com">
+                        <small class="text-danger"
+                            *ngIf="log_in_form.controls.user_email.touched && !log_in_form.controls.user_email.valid">This
+                            field is required!</small>
+                    </div>
+                    <div class="input-group">
+                        <span class="input-group-addon"><i class="glyphicon glyphicon-lock"></i></span>
+                        <input class="form-control input-lg validation-field" name="user_password"
+                            formControlName="user_password" id="password" type="password" placeholder="Your password">
+                        <small class="text-danger"
+                            *ngIf="log_in_form.controls.user_password.touched &&!log_in_form.controls.user_password.valid">This
+                            field is required!</small>
+                    </div>
+                    <div class="checkbox">
+                        <label><input type="checkbox" value="">Remember me</label>
+                        &nbsp; &nbsp;
+                        <a href="#">Forgot password</a>
+                    </div>
+                    <button class="btn" type="button" [disabled]="log_in_form.invalid"
+                        (click)="on_login_submit(log_in_form)" class="btn btn-success" routerLink="book">Log In</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
